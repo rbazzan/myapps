@@ -1,0 +1,35 @@
+unit uAbriArquivoTextoRtf;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Vcl.StdCtrls, Vcl.ExtCtrls;
+
+type
+  TForm4 = class(TForm)
+    Panel2: TPanel;
+    btSair: TButton;
+    pnlFundo: TPanel;
+    PageControl1: TPageControl;
+    tbs01: TTabSheet;
+    Arquivo02: TTabSheet;
+    Arquivo03: TTabSheet;
+    re01: TRichEdit;
+    re02: TRichEdit;
+    re03: TRichEdit;
+    Button1: TButton;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form4: TForm4;
+
+implementation
+
+{$R *.dfm}
+
+end.

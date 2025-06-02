@@ -1,0 +1,147 @@
+object frEditorRTF: TfrEditorRTF
+  Left = 0
+  Top = 0
+  Caption = 'Editor RTF'
+  ClientHeight = 430
+  ClientWidth = 665
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel2: TPanel
+    Left = 0
+    Top = 389
+    Width = 665
+    Height = 41
+    Align = alBottom
+    TabOrder = 0
+    ExplicitLeft = -187
+    ExplicitTop = 258
+    ExplicitWidth = 822
+    object btSair: TButton
+      AlignWithMargins = True
+      Left = 586
+      Top = 4
+      Width = 75
+      Height = 33
+      Align = alRight
+      Caption = 'Sair'
+      TabOrder = 0
+      ExplicitLeft = 743
+    end
+    object Button1: TButton
+      AlignWithMargins = True
+      Left = 4
+      Top = 4
+      Width = 261
+      Height = 33
+      Align = alLeft
+      Caption = 'Abrir um arquivo texto ou do Word ou Rtf'
+      TabOrder = 1
+      OnClick = Button1Click
+    end
+  end
+  object pnlFundo: TPanel
+    Left = 0
+    Top = 0
+    Width = 665
+    Height = 389
+    Align = alClient
+    TabOrder = 1
+    ExplicitTop = 39
+    ExplicitHeight = 348
+    object PageControl1: TPageControl
+      AlignWithMargins = True
+      Left = 4
+      Top = 4
+      Width = 657
+      Height = 381
+      ActivePage = tbs01
+      Align = alClient
+      TabOrder = 0
+      ExplicitTop = 2
+      object tbs01: TTabSheet
+        Caption = 'Arquivo01'
+        object re01: TRichEdit
+          AlignWithMargins = True
+          Left = 3
+          Top = 3
+          Width = 643
+          Height = 347
+          Align = alClient
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          Lines.Strings = (
+            'Nenhum arquivo carregado nessa aba ainda!')
+          ParentFont = False
+          TabOrder = 0
+          Zoom = 100
+          ExplicitLeft = 232
+          ExplicitTop = 136
+          ExplicitWidth = 185
+          ExplicitHeight = 89
+        end
+      end
+      object Arquivo02: TTabSheet
+        Caption = 'Arquivo02'
+        ImageIndex = 1
+        object re02: TRichEdit
+          AlignWithMargins = True
+          Left = 3
+          Top = 3
+          Width = 643
+          Height = 347
+          Align = alClient
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          Lines.Strings = (
+            'Nenhum arquivo carregado nessa aba ainda!')
+          ParentFont = False
+          TabOrder = 0
+          Zoom = 100
+          ExplicitLeft = 6
+          ExplicitTop = 6
+        end
+      end
+      object Arquivo03: TTabSheet
+        Caption = 'Arquivo03'
+        ImageIndex = 2
+        object re03: TRichEdit
+          AlignWithMargins = True
+          Left = 3
+          Top = 3
+          Width = 643
+          Height = 347
+          Align = alClient
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          Lines.Strings = (
+            'Nenhum arquivo carregado nessa aba ainda!')
+          ParentFont = False
+          TabOrder = 0
+          Zoom = 100
+          ExplicitLeft = 6
+          ExplicitTop = 6
+        end
+      end
+    end
+  end
+  object OpenDialog: TOpenDialog
+    Left = 328
+    Top = 224
+  end
+end
