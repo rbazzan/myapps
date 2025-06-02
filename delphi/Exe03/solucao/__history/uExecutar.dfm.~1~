@@ -1,0 +1,96 @@
+object Form4: TForm4
+  Left = 0
+  Top = 0
+  Caption = 'Form4'
+  ClientHeight = 259
+  ClientWidth = 279
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object pnlSair: TPanel
+    Left = 0
+    Top = 218
+    Width = 279
+    Height = 41
+    Align = alBottom
+    TabOrder = 0
+    ExplicitLeft = 8
+    ExplicitTop = 201
+    ExplicitWidth = 635
+    object Button2: TButton
+      AlignWithMargins = True
+      Left = 200
+      Top = 4
+      Width = 75
+      Height = 33
+      Align = alRight
+      Caption = 'Sair'
+      TabOrder = 0
+      ExplicitLeft = 191
+      ExplicitTop = 16
+      ExplicitHeight = 25
+    end
+  end
+  object pnlFundo: TPanel
+    Left = 0
+    Top = 0
+    Width = 279
+    Height = 218
+    Align = alClient
+    TabOrder = 1
+    ExplicitLeft = 232
+    ExplicitTop = 64
+    ExplicitWidth = 185
+    ExplicitHeight = 41
+    object Memo: TMemo
+      AlignWithMargins = True
+      Left = 4
+      Top = 60
+      Width = 271
+      Height = 154
+      Align = alClient
+      TabOrder = 0
+      ExplicitLeft = 8
+      ExplicitTop = 53
+      ExplicitWidth = 258
+      ExplicitHeight = 148
+    end
+    object pnlTop: TPanel
+      Left = 1
+      Top = 1
+      Width = 277
+      Height = 56
+      Align = alTop
+      TabOrder = 1
+      ExplicitWidth = 373
+      object Label1: TLabel
+        Left = 8
+        Top = 5
+        Width = 149
+        Height = 13
+        Caption = 'Selecione uma a'#231#227'o a executar'
+      end
+      object cbOpcoes: TComboBox
+        Left = 8
+        Top = 24
+        Width = 177
+        Height = 21
+        TabOrder = 0
+      end
+      object btExecutar: TButton
+        Left = 191
+        Top = 22
+        Width = 75
+        Height = 25
+        Caption = 'Executar'
+        TabOrder = 1
+      end
+    end
+  end
+end

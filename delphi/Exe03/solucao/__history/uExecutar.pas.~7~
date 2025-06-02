@@ -1,0 +1,75 @@
+unit uExecutar;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
+
+type
+  TfrExecutar = class(TForm)
+    pnlSair: TPanel;
+    Button2: TButton;
+    pnlFundo: TPanel;
+    Memo: TMemo;
+    pnlTop: TPanel;
+    cbOpcoes: TComboBox;
+    Label1: TLabel;
+    btExecutar: TButton;
+    rbMensagem: TRadioButton;
+    rbMemo: TRadioButton;
+    procedure Button2Click(Sender: TObject);
+    procedure btExecutarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frExecutar: TfrExecutar;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrExecutar.btExecutarClick(Sender: TObject);
+begin
+   if (rbMensagem.Checked or rbMemo.Checked) then begin
+      if rbMensagem.Checked then begin
+         ShowMessage(cbOpcoes.Text);
+      end;
+      if rbMensagem.Checked then begin
+         Memo.Lines.Add(cbOpcoes.Text);
+      end;
+
+      { *** outras maneiras de escrever melhor ***
+
+         if rbMensagem.Checked then begin
+
+         end else
+         if rbMensagem.Checked then begin
+
+         end;
+
+      **** ou ainda ******************************
+
+         if rbMensagem.Checked then begin
+
+         end else begin
+
+         end;
+
+      ********************************************}
+
+   end else begin
+     ShowMessage('Você precisa dizer se é pra eu escrever no memo ou mostrar uma mensagem');
+   end;
+end;
+
+procedure TfrExecutar.Button2Click(Sender: TObject);
+begin
+   Close;
+end;
+
+end.

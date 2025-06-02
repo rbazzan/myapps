@@ -1,0 +1,115 @@
+object frExecutar: TfrExecutar
+  Left = 0
+  Top = 0
+  Caption = 'Executar'
+  ClientHeight = 328
+  ClientWidth = 380
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poScreenCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object pnlSair: TPanel
+    Left = 0
+    Top = 287
+    Width = 380
+    Height = 41
+    Align = alBottom
+    TabOrder = 0
+    ExplicitLeft = 8
+    ExplicitTop = 201
+    ExplicitWidth = 635
+    object Button2: TButton
+      AlignWithMargins = True
+      Left = 301
+      Top = 4
+      Width = 75
+      Height = 33
+      Align = alRight
+      Caption = 'Sair'
+      TabOrder = 0
+      OnClick = Button2Click
+      ExplicitLeft = 191
+      ExplicitTop = 16
+      ExplicitHeight = 25
+    end
+  end
+  object pnlFundo: TPanel
+    Left = 0
+    Top = 0
+    Width = 380
+    Height = 287
+    Align = alClient
+    TabOrder = 1
+    ExplicitLeft = 232
+    ExplicitTop = 64
+    ExplicitWidth = 185
+    ExplicitHeight = 41
+    object Memo: TMemo
+      AlignWithMargins = True
+      Left = 4
+      Top = 76
+      Width = 372
+      Height = 207
+      Align = alClient
+      TabOrder = 0
+      ExplicitTop = 75
+    end
+    object pnlTop: TPanel
+      Left = 1
+      Top = 1
+      Width = 378
+      Height = 72
+      Align = alTop
+      TabOrder = 1
+      ExplicitWidth = 277
+      object Label1: TLabel
+        Left = 8
+        Top = 5
+        Width = 149
+        Height = 13
+        Caption = 'Selecione uma a'#231#227'o a executar'
+      end
+      object cbOpcoes: TComboBox
+        Left = 8
+        Top = 24
+        Width = 265
+        Height = 21
+        TabOrder = 0
+        Items.Strings = (
+          'Eu sou fod'#227'o!'
+          'Estou aprendendo pra caramba!'
+          'Vai seu doido!')
+      end
+      object btExecutar: TButton
+        Left = 279
+        Top = 21
+        Width = 75
+        Height = 25
+        Caption = 'Executar'
+        TabOrder = 1
+      end
+      object rbMensagem: TRadioButton
+        Left = 14
+        Top = 49
+        Width = 133
+        Height = 17
+        Caption = 'Executa na Mensagem'
+        TabOrder = 2
+      end
+      object rbMemo: TRadioButton
+        Left = 177
+        Top = 51
+        Width = 113
+        Height = 17
+        Caption = 'Executa no Memo'
+        TabOrder = 3
+      end
+    end
+  end
+end
