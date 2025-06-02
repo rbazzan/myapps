@@ -1,0 +1,142 @@
+object frTermos: TfrTermos
+  Left = 0
+  Top = 0
+  Caption = 'frTermos'
+  ClientHeight = 355
+  ClientWidth = 822
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object pnlSair: TPanel
+    Left = 0
+    Top = 0
+    Width = 822
+    Height = 41
+    Align = alTop
+    Caption = 
+      'Junte um verbo e um substantivo e crie um novo termo de duplo se' +
+      'ntido'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 0
+    ExplicitLeft = -8
+    ExplicitTop = -7
+  end
+  object pnlFundo: TPanel
+    Left = 0
+    Top = 41
+    Width = 822
+    Height = 273
+    Align = alClient
+    TabOrder = 1
+    ExplicitTop = -2
+    ExplicitHeight = 314
+    object lsbSubstantivo: TListBox
+      AlignWithMargins = True
+      Left = 143
+      Top = 4
+      Width = 130
+      Height = 265
+      Align = alLeft
+      ItemHeight = 13
+      Items.Strings = (
+        'p'#234'ssego'
+        'cabo '
+        'dedo '
+        'pau '
+        'manga'
+        'buraco '
+        'bola '
+        'duro ')
+      TabOrder = 0
+      ExplicitHeight = 306
+    end
+    object lsbVerbo: TListBox
+      AlignWithMargins = True
+      Left = 4
+      Top = 4
+      Width = 133
+      Height = 265
+      Align = alLeft
+      ItemHeight = 13
+      Items.Strings = (
+        'Descascar o(a)'
+        'Observar o(a)'
+        'Trabalhar o(a)'
+        'Meditar no(na)'
+        'Descobrir o(a)'
+        'Aceitar o(a)'
+        'Rejeitar o(a)'
+        'Compartilhar o(a)')
+      TabOrder = 1
+      ExplicitHeight = 306
+    end
+    object Memo: TMemo
+      AlignWithMargins = True
+      Left = 372
+      Top = 4
+      Width = 446
+      Height = 265
+      Align = alClient
+      TabOrder = 2
+      ExplicitLeft = 440
+      ExplicitWidth = 378
+      ExplicitHeight = 306
+    end
+    object Panel1: TPanel
+      Left = 276
+      Top = 1
+      Width = 93
+      Height = 271
+      Align = alLeft
+      BevelOuter = bvNone
+      TabOrder = 3
+      ExplicitHeight = 312
+      object btCriarNovoTermo: TButton
+        AlignWithMargins = True
+        Left = 3
+        Top = 3
+        Width = 87
+        Height = 265
+        Align = alClient
+        Caption = '>>'
+        TabOrder = 0
+        OnClick = btCriarNovoTermoClick
+        ExplicitLeft = 9
+        ExplicitTop = 84
+        ExplicitWidth = 75
+        ExplicitHeight = 145
+      end
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 314
+    Width = 822
+    Height = 41
+    Align = alBottom
+    TabOrder = 2
+    ExplicitTop = 258
+    ExplicitWidth = 380
+    object btSair: TButton
+      AlignWithMargins = True
+      Left = 743
+      Top = 4
+      Width = 75
+      Height = 33
+      Align = alRight
+      Caption = 'Sair'
+      TabOrder = 0
+    end
+  end
+end

@@ -1,0 +1,41 @@
+unit uTermos;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
+
+type
+  TfrTermos = class(TForm)
+    pnlSair: TPanel;
+    pnlFundo: TPanel;
+    lsbSubstantivo: TListBox;
+    lsbVerbo: TListBox;
+    Memo: TMemo;
+    Panel1: TPanel;
+    btCriarNovoTermo: TButton;
+    Panel2: TPanel;
+    btSair: TButton;
+    procedure btCriarNovoTermoClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frTermos: TfrTermos;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrTermos.btCriarNovoTermoClick(Sender: TObject);
+begin
+  Memo.Lines.Add(
+    lsbVerbo.Items[lsbVerbo.ItemIndex] + ' ' + lsbSubstantivo.Items[lsbSubstantivo.ItemIndex]
+  );
+end;
+
+end.
