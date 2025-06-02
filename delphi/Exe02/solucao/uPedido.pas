@@ -1,0 +1,34 @@
+unit uPedido;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
+
+type
+  TfrPedido = class(TForm)
+    MemoPedido: TMemo;
+    Panel3: TPanel;
+    btImprimir: TButton;
+    procedure btImprimirClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frPedido: TfrPedido;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrPedido.btImprimirClick(Sender: TObject);
+begin
+   ShowMessage('Pedido impresso com sucesso!');
+   Close;
+end;
+
+end.

@@ -1,0 +1,139 @@
+object frMenu: TfrMenu
+  Left = 0
+  Top = 0
+  Caption = 'Card'#225'pio'
+  ClientHeight = 303
+  ClientWidth = 1049
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poScreenCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object MemoCardapio: TMemo
+    Left = 0
+    Top = 0
+    Width = 343
+    Height = 262
+    Align = alLeft
+    Enabled = False
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Comic Sans MS'
+    Font.Style = [fsBold]
+    Lines.Strings = (
+      '01 - X-Salada '#8211' R$ 12,50'
+      '02 - X-Burguer '#8211' R$ 11,00'
+      '03 - X-Bacon '#8211' R$ 14,00'
+      '04 - X-Tudo '#8211' R$ 16,50'
+      '05 - Misto Quente '#8211' R$ 8,00'
+      '06 - Cachorro-Quente '#8211' R$ 9,50'
+      '07 - Hamb'#250'rguer Artesanal '#8211' R$ 18,00'
+      '08 - Pastel de Carne '#8211' R$ 7,00'
+      '09 - Pastel de Queijo '#8211' R$ 7,00'
+      '10 - Tapioca de Frango '#8211' R$ 10,00')
+    ParentFont = False
+    TabOrder = 0
+    ExplicitHeight = 299
+  end
+  object Panel1: TPanel
+    Left = 343
+    Top = 0
+    Width = 168
+    Height = 262
+    Align = alLeft
+    TabOrder = 1
+    ExplicitLeft = 321
+    ExplicitHeight = 554
+    object Label1: TLabel
+      Left = 28
+      Top = 19
+      Width = 64
+      Height = 13
+      Caption = 'N'#186' do Lanche'
+    end
+    object Label2: TLabel
+      Left = 28
+      Top = 67
+      Width = 28
+      Height = 13
+      Caption = 'Qtde:'
+    end
+    object edNumero: TEdit
+      Left = 24
+      Top = 38
+      Width = 121
+      Height = 21
+      ParentShowHint = False
+      ShowHint = False
+      TabOrder = 1
+    end
+    object btAdicionar: TButton
+      AlignWithMargins = True
+      Left = 24
+      Top = 121
+      Width = 121
+      Height = 64
+      Caption = 'Adicionar >>'
+      TabOrder = 0
+      OnClick = btAdicionarClick
+    end
+    object edQtde: TEdit
+      Left = 24
+      Top = 86
+      Width = 121
+      Height = 21
+      ParentShowHint = False
+      ShowHint = False
+      TabOrder = 2
+    end
+  end
+  object MemoPedido: TMemo
+    Left = 511
+    Top = 0
+    Width = 538
+    Height = 262
+    Align = alClient
+    Enabled = False
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Comic Sans MS'
+    Font.Style = [fsBold]
+    Lines.Strings = (
+      'Pedido:')
+    ParentFont = False
+    TabOrder = 2
+    ExplicitLeft = 0
+    ExplicitTop = 239
+    ExplicitWidth = 641
+    ExplicitHeight = 265
+  end
+  object Panel3: TPanel
+    Left = 0
+    Top = 262
+    Width = 1049
+    Height = 41
+    Align = alBottom
+    TabOrder = 3
+    ExplicitTop = 273
+    ExplicitWidth = 641
+    object btFinalizar: TButton
+      AlignWithMargins = True
+      Left = 928
+      Top = 4
+      Width = 117
+      Height = 33
+      Align = alRight
+      Caption = 'Finalizar Pedido'
+      TabOrder = 0
+      OnClick = btFinalizarClick
+      ExplicitLeft = 520
+    end
+  end
+end

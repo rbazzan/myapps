@@ -1,0 +1,25 @@
+unit uTelaPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls;
+
+type
+  TfrTelaPrincipal = class(TForm)
+    imgFundo: TImage;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frTelaPrincipal: TfrTelaPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+end.

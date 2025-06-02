@@ -1,0 +1,89 @@
+object frMenu: TfrMenu
+  Left = 0
+  Top = 0
+  Caption = 'Card'#225'pio'
+  ClientHeight = 308
+  ClientWidth = 641
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poScreenCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Memo: TMemo
+    Left = 0
+    Top = 0
+    Width = 641
+    Height = 267
+    Align = alClient
+    Enabled = False
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Comic Sans MS'
+    Font.Style = [fsBold]
+    Lines.Strings = (
+      '01 - X-Salada '#8211' R$ 12,50'
+      '02 - X-Burguer '#8211' R$ 11,00'
+      '03 - X-Bacon '#8211' R$ 14,00'
+      '04 - X-Tudo '#8211' R$ 16,50'
+      '05 - Misto Quente '#8211' R$ 8,00'
+      '06 - Cachorro-Quente '#8211' R$ 9,50'
+      '07 - Hamb'#250'rguer Artesanal '#8211' R$ 18,00'
+      '08 - Pastel de Carne '#8211' R$ 7,00'
+      '09 - Pastel de Queijo '#8211' R$ 7,00'
+      '10 - Tapioca de Frango '#8211' R$ 10,00')
+    ParentFont = False
+    TabOrder = 0
+    ExplicitWidth = 635
+    ExplicitHeight = 249
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 267
+    Width = 641
+    Height = 41
+    Align = alBottom
+    TabOrder = 1
+    ExplicitLeft = 232
+    ExplicitTop = 152
+    ExplicitWidth = 185
+    object edNumero: TEdit
+      Left = 16
+      Top = 8
+      Width = 121
+      Height = 21
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 1
+      TextHint = 'N'#186' Lanche'
+    end
+    object edQtde: TEdit
+      Left = 143
+      Top = 8
+      Width = 42
+      Height = 21
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 2
+      TextHint = 'Qtde'
+    end
+    object btAdicionar: TButton
+      AlignWithMargins = True
+      Left = 562
+      Top = 4
+      Width = 75
+      Height = 33
+      Align = alRight
+      Caption = 'Adicionar'
+      TabOrder = 0
+      ExplicitLeft = 536
+      ExplicitTop = 6
+      ExplicitHeight = 25
+    end
+  end
+end

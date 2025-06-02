@@ -1,0 +1,58 @@
+object frPedido: TfrPedido
+  Left = 0
+  Top = 0
+  Caption = 'frPedido'
+  ClientHeight = 299
+  ClientWidth = 635
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poScreenCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object MemoPedido: TMemo
+    Left = 0
+    Top = 0
+    Width = 635
+    Height = 258
+    Align = alClient
+    Enabled = False
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Comic Sans MS'
+    Font.Style = [fsBold]
+    Lines.Strings = (
+      'Pedido:')
+    ParentFont = False
+    TabOrder = 0
+    ExplicitLeft = 97
+    ExplicitWidth = 538
+    ExplicitHeight = 262
+  end
+  object Panel3: TPanel
+    Left = 0
+    Top = 258
+    Width = 635
+    Height = 41
+    Align = alBottom
+    TabOrder = 1
+    ExplicitLeft = -414
+    ExplicitWidth = 1049
+    object btImprimir: TButton
+      AlignWithMargins = True
+      Left = 544
+      Top = 4
+      Width = 87
+      Height = 33
+      Align = alRight
+      Caption = 'Imprimir'
+      TabOrder = 0
+      OnClick = btImprimirClick
+    end
+  end
+end
