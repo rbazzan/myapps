@@ -1,0 +1,50 @@
+01 - Crie um novo projeto VCL Application
+02 - Salve o projeto com o nome Calcular
+03 - Salve a Unit (unidade) como uCalcular.pas
+04 - Dê um Build e um compile
+05 - Verifique se na pasta win32/debug existe agora um Calcular.exe
+06 - Agora configure algumas propriedades da tela do Calcular
+   Nome da tela: 'frCalcular'
+   Titulo: 'Programa que Calcula'
+   Posicionamento: Deve abrir no meio do monitor
+   Icones: Remover o icone de maximizar
+   Tamanho da Tela: deve ter 800 largura x 600 altura   
+   
+07 - Adicione um component TPanel a tela 
+   Renomei-o como: pnlFundo
+   Remova o Caption
+   Alinhe-o para que fique expandido em toda area da tela.  
+   
+08 - Adicione dois TEdit com um TLabel para identificar cada um
+   Os Labels devem dizer "Primeiro Numero:", "Segundo Número:"
+   Nomeie cada TEdit correspondente com edNumero01, edNumero02
+   o Texto de ambos os TEdit deve ser inicialmente "0".
+     
+09 - Adicione mais um panel dentro de pnlFundo, nomei-o como pnlFooter,
+     Alinhe-o para fical fixo embaixo da tela
+
+10 - Adicione um botão (escolha qual quiser) dentro dele e alinhe o botão
+     para que fique fixo a direita, ative nele, a propriedade de alinhamento
+	 com margens para melhorar o visual e manter uma "bordinha" entre o botão e o 
+	 pnlFooter;
+	 
+11 - Nomei-e o botão como btCalcular, e o texto dele com "Calcule".
+     Quando clicar no botão "Calcule" ele deve mostrar uma mensagem com a somatória dos 
+	 dois Edit´s. "A soma dos dois números é:...";
+
+10 - Adicione mais um botão (escolha qual quiser) dentro dele e alinhe o botão
+     para que fique fixo a direita, ative nele, a propriedade de alinhamento
+	 com margens para melhorar o visual e manter uma "bordinha" entre o botão e o 
+	 pnlFooter;
+	 
+11 - Nomei-e o botão como btSair, e o texto dele com "Sair".
+     Quando clicar no botão "Sair" ele deve fechar  o formulário.
+	 
+	 
+
+ 
+     
+ 
+   
+   
+   

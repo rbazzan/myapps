@@ -1,0 +1,99 @@
+object frCalcular: TfrCalcular
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu, biMinimize]
+  Caption = 'Programa que Calcula'
+  ClientHeight = 179
+  ClientWidth = 211
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poScreenCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object pnlFundo: TPanel
+    Left = 0
+    Top = 0
+    Width = 211
+    Height = 179
+    Align = alClient
+    TabOrder = 0
+    ExplicitLeft = 232
+    ExplicitTop = 152
+    ExplicitWidth = 185
+    ExplicitHeight = 41
+    object Label1: TLabel
+      Left = 24
+      Top = 21
+      Width = 82
+      Height = 13
+      Caption = 'Primeiro Numero:'
+    end
+    object Label2: TLabel
+      Left = 24
+      Top = 69
+      Width = 86
+      Height = 13
+      Caption = 'Segundo Numero:'
+    end
+    object edNumero01: TEdit
+      Left = 24
+      Top = 40
+      Width = 121
+      Height = 21
+      TabOrder = 0
+      Text = '0'
+    end
+    object edNumero02: TEdit
+      Left = 24
+      Top = 88
+      Width = 121
+      Height = 21
+      TabOrder = 1
+      Text = '0'
+    end
+    object pnlFootter: TPanel
+      Left = 1
+      Top = 137
+      Width = 209
+      Height = 41
+      Align = alBottom
+      TabOrder = 2
+      ExplicitLeft = -8
+      ExplicitTop = 72
+      ExplicitWidth = 185
+      object btSair: TButton
+        AlignWithMargins = True
+        Left = 130
+        Top = 4
+        Width = 75
+        Height = 33
+        Align = alRight
+        Caption = 'Sair'
+        TabOrder = 0
+        OnClick = btSairClick
+        ExplicitLeft = 83
+        ExplicitTop = 8
+        ExplicitHeight = 25
+      end
+      object btCalcule: TButton
+        AlignWithMargins = True
+        Left = 49
+        Top = 4
+        Width = 75
+        Height = 33
+        Align = alRight
+        Caption = 'Calcule'
+        TabOrder = 1
+        OnClick = btCalculeClick
+        ExplicitLeft = 83
+        ExplicitTop = 8
+        ExplicitHeight = 25
+      end
+    end
+  end
+end
