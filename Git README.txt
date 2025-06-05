@@ -1,24 +1,12 @@
-cd C:\logicaapp
-git init
-git remote add origin https://github.com/seu-usuario/logicaapp.git
-git add .
-git commit -m "primeiro commit"
-git branch -M main
-git push -u origin main
-
-
 baixar repositorio da primeira vez
-git clone https://github.com/seu-usuario/logicaapp.git
+git clone https://github.com/rbazzan/myapps.git
 
-depois
 
-baixar atualizações remotas
-git pull
+cd \                                    - volta para a raiz c:\
+E: F: D:                                - muda a letra do disco
 
-subir atualizações locais
-git add .
-git commit -m "quais atualizações foram feitas"
-git push
-
-para verificar alterações
-git diff <nome do arquivo>
+git add .                               - adiciona novos arquivo para subir depois
+git commit -m "descricao do que fez"    - comita para fechar o pacote que vai subir
+git push                                - comando para subir o pacote
+git pull                                - comando para baixar as atualizações que estão no repositorio.
+git diff <nome do arquivo>              - verifica o que foi alterado
