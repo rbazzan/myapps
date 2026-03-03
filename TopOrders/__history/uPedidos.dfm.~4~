@@ -1,0 +1,142 @@
+object frPedidos: TfrPedidos
+  Left = 0
+  Top = 0
+  Caption = 'Pedidos'
+  ClientHeight = 510
+  ClientWidth = 919
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 919
+    Height = 38
+    Align = alTop
+    TabOrder = 0
+    object Label1: TLabel
+      AlignWithMargins = True
+      Left = 517
+      Top = 4
+      Width = 55
+      Height = 30
+      Align = alRight
+      Caption = 'Data inicial:'
+      Layout = tlCenter
+      ExplicitLeft = 339
+      ExplicitTop = 12
+      ExplicitHeight = 13
+    end
+    object Label2: TLabel
+      AlignWithMargins = True
+      Left = 681
+      Top = 4
+      Width = 50
+      Height = 30
+      Align = alRight
+      Caption = 'Data final:'
+      Layout = tlCenter
+      ExplicitLeft = 535
+      ExplicitTop = 6
+      ExplicitHeight = 13
+    end
+    object Label3: TLabel
+      AlignWithMargins = True
+      Left = 4
+      Top = 4
+      Width = 50
+      Height = 30
+      Align = alLeft
+      Caption = 'Pesquisar:'
+      Layout = tlCenter
+      ExplicitHeight = 13
+    end
+    object edPesquisa: TEdit
+      AlignWithMargins = True
+      Left = 60
+      Top = 7
+      Width = 451
+      Height = 24
+      Margins.Top = 6
+      Margins.Bottom = 6
+      Align = alClient
+      TabOrder = 0
+      TextHint = 'Digite o texto a pesquisar'
+      ExplicitLeft = 4
+      ExplicitTop = 4
+      ExplicitWidth = 437
+      ExplicitHeight = 33
+    end
+    object DateTimePicker1: TDateTimePicker
+      AlignWithMargins = True
+      Left = 578
+      Top = 7
+      Width = 97
+      Height = 24
+      Margins.Top = 6
+      Margins.Bottom = 6
+      Align = alRight
+      Date = 46084.000000000000000000
+      Time = 0.697978541669726800
+      TabOrder = 1
+      ExplicitLeft = 576
+    end
+    object DateTimePicker2: TDateTimePicker
+      AlignWithMargins = True
+      Left = 737
+      Top = 7
+      Width = 97
+      Height = 24
+      Margins.Top = 6
+      Margins.Bottom = 6
+      Align = alRight
+      Date = 46084.000000000000000000
+      Time = 0.697978541669726800
+      TabOrder = 2
+      ExplicitLeft = 736
+    end
+    object Button1: TButton
+      AlignWithMargins = True
+      Left = 840
+      Top = 4
+      Width = 75
+      Height = 30
+      Align = alRight
+      Caption = 'Carregar'
+      TabOrder = 3
+      ExplicitLeft = 776
+      ExplicitTop = 8
+      ExplicitHeight = 25
+    end
+  end
+  object StatusBar1: TStatusBar
+    Left = 0
+    Top = 491
+    Width = 919
+    Height = 19
+    Panels = <>
+    ExplicitLeft = 464
+    ExplicitTop = 264
+    ExplicitWidth = 0
+  end
+  object DBGrid1: TDBGrid
+    AlignWithMargins = True
+    Left = 3
+    Top = 41
+    Width = 913
+    Height = 447
+    Align = alClient
+    TabOrder = 2
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+  end
+end

@@ -1,0 +1,47 @@
+unit uPedidos;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.Grids, Vcl.DBGrids,
+  Vcl.ComCtrls, Vcl.ExtCtrls, Vcl.StdCtrls;
+
+type
+  TfrPedidos = class(TForm)
+    Panel1: TPanel;
+    StatusBar1: TStatusBar;
+    DBGrid1: TDBGrid;
+    edPesquisa: TEdit;
+    DateTimePicker1: TDateTimePicker;
+    Label1: TLabel;
+    Label2: TLabel;
+    DateTimePicker2: TDateTimePicker;
+    Button1: TButton;
+    Label3: TLabel;
+    Panel2: TPanel;
+    Button2: TButton;
+    Button5: TButton;
+    Button3: TButton;
+    Button4: TButton;
+    GroupBox1: TGroupBox;
+    Shape1: TShape;
+    Label4: TLabel;
+    Shape2: TShape;
+    Label5: TLabel;
+    Label6: TLabel;
+    Shape3: TShape;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frPedidos: TfrPedidos;
+
+implementation
+
+{$R *.dfm}
+
+end.

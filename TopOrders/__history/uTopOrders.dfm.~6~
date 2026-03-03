@@ -1,0 +1,41 @@
+object frTopOrders: TfrTopOrders
+  Left = 0
+  Top = 0
+  Caption = 'TopOrders'
+  ClientHeight = 540
+  ClientWidth = 916
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  Menu = MainMenu
+  OldCreateOrder = False
+  Position = poScreenCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object MainMenu: TMainMenu
+    Left = 24
+    Top = 24
+    object Arquivo1: TMenuItem
+      Caption = 'Arquivo'
+      object subMenuPedidos: TMenuItem
+        Caption = 'Pedidos'
+        OnClick = subMenuPedidosClick
+      end
+      object subMenuProdutos: TMenuItem
+        Caption = 'Produtos'
+      end
+    end
+    object Configuraes1: TMenuItem
+      Caption = 'Configura'#231#245'es'
+    end
+    object Ajuda1: TMenuItem
+      Caption = 'Ajuda'
+      object Sobre1: TMenuItem
+        Caption = '&Sobre'
+      end
+    end
+  end
+end

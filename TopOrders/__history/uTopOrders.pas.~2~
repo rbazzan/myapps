@@ -1,0 +1,30 @@
+unit uTopOrders;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus;
+
+type
+  TfrTopOrders = class(TForm)
+    MainMenu1: TMainMenu;
+    Arquivo1: TMenuItem;
+    Novo1: TMenuItem;
+    Configuraes1: TMenuItem;
+    Ajuda1: TMenuItem;
+    Sobre1: TMenuItem;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frTopOrders: TfrTopOrders;
+
+implementation
+
+{$R *.dfm}
+
+end.

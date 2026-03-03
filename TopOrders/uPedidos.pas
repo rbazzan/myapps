@@ -1,0 +1,61 @@
+unit uPedidos;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.Grids, Vcl.DBGrids,
+  Vcl.ComCtrls, Vcl.ExtCtrls, Vcl.StdCtrls;
+
+type
+  TfrPedidos = class(TForm)
+    Panel1: TPanel;
+    StatusBar1: TStatusBar;
+    DBGrid1: TDBGrid;
+    edPesquisa: TEdit;
+    DateTimePicker1: TDateTimePicker;
+    Label1: TLabel;
+    Label2: TLabel;
+    DateTimePicker2: TDateTimePicker;
+    Button1: TButton;
+    Label3: TLabel;
+    Panel2: TPanel;
+    Button2: TButton;
+    GroupBox1: TGroupBox;
+    Shape1: TShape;
+    Label4: TLabel;
+    Shape2: TShape;
+    Label5: TLabel;
+    Label6: TLabel;
+    Shape3: TShape;
+    Button3: TButton;
+    Button4: TButton;
+    Button5: TButton;
+    Button10: TButton;
+    procedure Button2Click(Sender: TObject);
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frPedidos: TfrPedidos;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrPedidos.Button2Click(Sender: TObject);
+begin
+   Close;
+end;
+
+procedure TfrPedidos.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+   if Key = VK_ESCAPE then close;
+end;
+
+end.
