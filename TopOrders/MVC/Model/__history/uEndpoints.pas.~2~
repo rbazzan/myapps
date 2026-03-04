@@ -1,0 +1,17 @@
+unit uEndpoints;
+
+interface
+
+type
+  TPEndpoint = (
+                tpProduto_Post,
+                tpProduto_Get,
+                tpProduto_Put,
+                tpProduto_Delete
+                )
+
+
+
+implementation
+
+end.

@@ -1,0 +1,122 @@
+unit uProduto;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
+
+  uModel;
+
+type
+  TProduto = class(TComponent)
+  private
+    FValor: Double;
+    FCodigo: String;
+    FID: Integer;
+    FNome: String;
+    procedure SetCodigo(const Value: String);
+    procedure SetID(const Value: Integer);
+    procedure SetNome(const Value: String);
+    procedure SetValor(const Value: Double);
+  public
+    constructor Create(AOwner: TComponent); override;
+    destructor Destroy; override;
+    property ID: Integer read FID write SetID;
+    property Codigo: String read FCodigo write SetCodigo;
+    property Nome: String read FNome write SetNome;
+    property Valor: Double read FValor write SetValor;
+  end;
+
+  TProdutoCRUD = class(TComponent)
+  private
+
+  public
+    constructor Create(AOwner: TComponent); override;
+    destructor Destroy; override;
+
+    //CRUD
+    function POST(Produto: TProduto): Boolean;
+    function GET(ID: Integer): Boolean;
+    function GET(): Boolean;
+    function PUT(Produto: TProduto): Boolean;
+    function DELETE(ID: Integer): Boolean;
+  end;
+
+implementation
+
+
+{ TController }
+
+constructor TProduto.Create(AOwner: TComponent);
+begin
+  inherited;
+
+end;
+
+destructor TProduto.Destroy;
+begin
+
+  inherited;
+end;
+
+procedure TProduto.SetCodigo(const Value: String);
+begin
+  FCodigo := Value;
+end;
+
+procedure TProduto.SetID(const Value: Integer);
+begin
+  FID := Value;
+end;
+
+procedure TProduto.SetNome(const Value: String);
+begin
+  FNome := Value;
+end;
+
+procedure TProduto.SetValor(const Value: Double);
+begin
+  FValor := Value;
+end;
+
+
+{ TProdutoCRUD }
+
+constructor TProdutoCRUD.Create(AOwner: TComponent);
+begin
+  inherited;
+
+end;
+
+function TProdutoCRUD.DELETE(ID: Integer): Boolean;
+begin
+
+end;
+
+destructor TProdutoCRUD.Destroy;
+begin
+
+  inherited;
+end;
+
+function TProdutoCRUD.GET(ID: Integer): Boolean;
+begin
+
+end;
+
+function TProdutoCRUD.GET(): Boolean;
+begin
+
+end;
+
+function TProdutoCRUD.POST(Produto: TProduto): Boolean;
+begin
+
+end;
+
+function TProdutoCRUD.PUT(Produto: TProduto): Boolean;
+begin
+
+end;
+
+end.

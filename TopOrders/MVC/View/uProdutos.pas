@@ -1,4 +1,4 @@
-unit uProdutos;
+﻿unit uProdutos;
 
 interface
 
@@ -8,6 +8,7 @@ uses
   Vcl.Grids, Vcl.DBGrids, Vcl.ComCtrls;
 
 type
+  //View ◄-► Controller
   TfrProdutos = class(TForm)
     Panel1: TPanel;
     Label3: TLabel;

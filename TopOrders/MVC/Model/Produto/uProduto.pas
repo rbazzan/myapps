@@ -21,6 +21,7 @@ type
   public
     constructor Create(AOwner: TComponent); override;
     destructor Destroy; override;
+    procedure InicializaProperty();
     property ID: Integer read FID write SetID;
     property Codigo: String read FCodigo write SetCodigo;
     property Nome: String read FNome write SetNome;
@@ -36,8 +37,8 @@ type
 
     //CRUD
     function POST(Produto: TProduto): Boolean;
-    function GET(ID: Integer): Boolean;
-    function GET(): Boolean;
+    function GET(ID: Integer): Boolean;overload;
+    function GET(): Boolean;overload;
     function PUT(Produto: TProduto): Boolean;
     function DELETE(ID: Integer): Boolean;
   end;
@@ -50,13 +51,20 @@ implementation
 constructor TProduto.Create(AOwner: TComponent);
 begin
   inherited;
-
+   InicializaProperty();
 end;
 
 destructor TProduto.Destroy;
 begin
-
   inherited;
+end;
+
+procedure TProduto.InicializaProperty();
+begin
+  SetID(0);
+  SetCodigo(EmptyStr);
+  SetNome(EmptyStr);
+  SetValor(0);
 end;
 
 procedure TProduto.SetCodigo(const Value: String);

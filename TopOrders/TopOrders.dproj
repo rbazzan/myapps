@@ -158,6 +158,7 @@
         <DCCReference Include="MVC\Control\uController.pas"/>
         <DCCReference Include="MVC\Model\uConversor.pas"/>
         <DCCReference Include="MVC\Model\Produto\uProduto.pas"/>
+        <DCCReference Include="MVC\Model\uEndpoints.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

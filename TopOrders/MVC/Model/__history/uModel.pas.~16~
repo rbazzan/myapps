@@ -1,0 +1,89 @@
+unit uModel;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, REST.Types, REST.Client,
+   System.JSON, System.Variants,
+  Data.Bind.Components, Data.Bind.ObjectScope, Data.DB,
+  FireDAC.Comp.Client,
+
+  uConversor,
+  uEndpoints;
+
+type
+  TModelo = class(TDataModule)
+    RESTClient: TRESTClient;
+    RESTRequest: TRESTRequest;
+    RESTResponse: TRESTResponse;
+  private
+    { Private declarations }
+    function Execute(Endpoint,Json: String; Method: TRESTRequestMethod): String;overload;
+    function Execute(Endpoint:String; Method: TRESTRequestMethod): String;overload;
+  public
+    { Public declarations }
+
+    function POST(EndPoint: TPEndpoint;Json: String): Boolean;
+    function GET(EndPoint: TPEndpoint): Boolean; overload;
+    function GET(EndPoint: TPEndpoint;Params: String): Boolean; overload;
+    function PUT(EndPoint: TPEndpoint;Json: String): Boolean;
+    function DELETE(EndPoint: TPEndpoint): Boolean;
+  end;
+
+var
+  Modelo: TModelo;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+
+{ TModelo }
+
+function TModelo.Execute(Endpoint: String; Method: TRESTRequestMethod): String;
+begin
+   RESTClient.BaseURL := Endpoint;
+   RESTRequest.Method := Method;
+   RESTRequest.Body.ClearBody;
+   RESTRequest.Execute;
+   Result := RESTResponse.Content;
+end;
+
+function TModelo.Execute(Endpoint, Json: String; Method: TRESTRequestMethod): String;
+begin
+   RESTClient.BaseURL := Endpoint;
+   RESTRequest.Method := Method;
+   RESTRequest.Body.ClearBody;
+   RESTRequest.Body.Add(Json, ctAPPLICATION_JSON);
+   RESTRequest.Execute;
+   Result := RESTResponse.Content;
+end;
+
+function TModelo.DELETE(EndPoint: TPEndpoint): Boolean;
+begin
+
+end;
+
+function TModelo.GET(EndPoint: TPEndpoint): Boolean;
+begin
+
+end;
+
+function TModelo.GET(EndPoint: TPEndpoint;Params: String): Boolean;
+begin
+
+end;
+
+function TModelo.POST(EndPoint: TPEndpoint; Json: String): Boolean;
+begin
+
+end;
+
+function TModelo.PUT(EndPoint: TPEndpoint; Json: String): Boolean;
+begin
+
+end;
+
+end.

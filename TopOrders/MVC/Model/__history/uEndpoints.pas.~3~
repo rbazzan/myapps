@@ -1,0 +1,23 @@
+unit uEndpoints;
+
+interface
+
+type
+  TPEndpoint = (
+                tpProduto_Post,
+                tpProduto_Get,
+                tpProduto_Put,
+                tpProduto_Delete
+                );
+
+const
+  URL_EndPoint   = 'https://localhosto:5372';
+  Produto_Post   = '/produto';
+  Produto_Get    = '/produto';
+  Produto_Put    = '/produto';
+  Produto_Delete = '/produto';
+
+
+implementation
+
+end.

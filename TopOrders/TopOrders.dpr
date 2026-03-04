@@ -20,7 +20,8 @@ uses
   uAppMessage in 'MVC\Control\uAppMessage.pas',
   uController in 'MVC\Control\uController.pas',
   uConversor in 'MVC\Model\uConversor.pas',
-  uProduto in 'MVC\Model\Produto\uProduto.pas';
+  uProduto in 'MVC\Model\Produto\uProduto.pas',
+  uEndpoints in 'MVC\Model\uEndpoints.pas';
 
 {$R *.res}
 
@@ -29,7 +30,6 @@ begin
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TfrLogin, frLogin);
   Application.CreateForm(TfrTopOrders, frTopOrders);
-  Application.CreateForm(TModelo, Modelo);
   TStyleManager.TrySetStyle('Carbon');
   Application.Run;
 end.
