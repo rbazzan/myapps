@@ -1,0 +1,83 @@
+unit uUsuarioNovo;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.ComCtrls;
+
+type
+  TfrUsuarioNovo = class(TForm)
+    StatusBar1: TStatusBar;
+    Panel2: TPanel;
+    btFechar: TButton;
+    btGravar: TButton;
+    Label1: TLabel;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Label2: TLabel;
+    Edit3: TEdit;
+    Label3: TLabel;
+    Edit4: TEdit;
+    Label4: TLabel;
+    procedure btFecharClick(Sender: TObject);
+    procedure btGravarClick(Sender: TObject);
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+  private
+    FCodigoUsuario: Integer;
+    { Private declarations }
+    function Gravar(): Boolean;
+    function Validar(): Boolean;
+    procedure SetCodigoUsuario(const Value: Integer);
+  public
+    { Public declarations }
+    property CodigoUsuario: Integer read FCodigoUsuario write SetCodigoUsuario;
+  end;
+
+var
+  frUsuarioNovo: TfrUsuarioNovo;
+
+implementation
+
+{$R *.dfm}
+
+uses uAppMessage;
+
+procedure TfrUsuarioNovo.btFecharClick(Sender: TObject);
+begin
+  ModalResult := mrCancel;
+end;
+
+procedure TfrUsuarioNovo.btGravarClick(Sender: TObject);
+begin
+   if Gravar() then begin
+      AppMsgOK('Dados gravados com sucesso!');
+      ModalResult := mrOK;
+   end;
+end;
+
+procedure TfrUsuarioNovo.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+   if Key = VK_ESCAPE then close;
+
+end;
+
+function TfrUsuarioNovo.Gravar(): Boolean;
+begin
+   if Validar() then begin
+      Result := True;
+   end;
+end;
+
+procedure TfrUsuarioNovo.SetCodigoUsuario(const Value: Integer);
+begin
+  FCodigoUsuario := Value;
+end;
+
+function TfrUsuarioNovo.Validar(): Boolean;
+begin
+   Result := True;
+end;
+
+end.

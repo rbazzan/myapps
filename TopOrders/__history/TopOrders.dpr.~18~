@@ -1,0 +1,31 @@
+program TopOrders;
+
+uses
+  Vcl.Forms,
+  uTopOrders in 'uTopOrders.pas' {frTopOrders},
+  uPedidos in 'uPedidos.pas' {frPedidos},
+  uProdutos in 'uProdutos.pas' {frProdutos},
+  uUsuarios in 'uUsuarios.pas' {frUsuarios},
+  uProdutoNovo in 'uProdutoNovo.pas' {frProdutoNovo},
+  uPedidoNovo in 'uPedidoNovo.pas' {frPedidoNovo},
+  uPedidosAddProduto in 'uPedidosAddProduto.pas' {frPedidosAddProduto},
+  uAppMessage in 'uAppMessage.pas',
+  uUsuarioNovo in 'uUsuarioNovo.pas' {frUsuarioNovo},
+  Vcl.Themes,
+  Vcl.Styles,
+  uUsuariosTrocarSenha in 'uUsuariosTrocarSenha.pas' {frUsuariosTrocarSenha},
+  uConfiguracoes in 'uConfiguracoes.pas' {frConfiguracoes},
+  uSobre in 'uSobre.pas' {AboutBox};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  TStyleManager.TrySetStyle('Carbon');
+  Application.CreateForm(TfrTopOrders, frTopOrders);
+  Application.CreateForm(TfrUsuariosTrocarSenha, frUsuariosTrocarSenha);
+  Application.CreateForm(TfrConfiguracoes, frConfiguracoes);
+  Application.CreateForm(TAboutBox, AboutBox);
+  Application.Run;
+end.

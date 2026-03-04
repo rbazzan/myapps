@@ -1,0 +1,72 @@
+unit uUsuariosTrocarSenha;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.ComCtrls;
+
+type
+  TfrUsuariosTrocarSenha = class(TForm)
+    Panel2: TPanel;
+    btFechar: TButton;
+    btGravar: TButton;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Label2: TLabel;
+    Label3: TLabel;
+    Edit4: TEdit;
+    Label4: TLabel;
+    procedure btGravarClick(Sender: TObject);
+    procedure btFecharClick(Sender: TObject);
+  private
+    FCodigoUsuario: Integer;
+    { Private declarations }
+    function Gravar(): Boolean;
+    function Validar(): Boolean;
+    procedure SetCodigoUsuario(const Value: Integer);
+  public
+    { Public declarations }
+    property CodigoUsuario: Integer read FCodigoUsuario write SetCodigoUsuario;
+  end;
+
+var
+  frUsuariosTrocarSenha: TfrUsuariosTrocarSenha;
+
+implementation
+
+{$R *.dfm}
+
+uses uAppMessage;
+
+procedure TfrUsuariosTrocarSenha.btFecharClick(Sender: TObject);
+begin
+  ModalResult := mrCancel;
+end;
+
+procedure TfrUsuariosTrocarSenha.btGravarClick(Sender: TObject);
+begin
+   if Gravar() then begin
+      AppMsgOK('Senha alterada com sucesso!');
+      ModalResult := mrOK;
+   end;
+end;
+
+function TfrUsuariosTrocarSenha.Gravar(): Boolean;
+begin
+   if Validar() then begin
+      Result := True;
+   end;
+end;
+
+procedure TfrUsuariosTrocarSenha.SetCodigoUsuario(const Value: Integer);
+begin
+  FCodigoUsuario := Value;
+end;
+
+function TfrUsuariosTrocarSenha.Validar(): Boolean;
+begin
+  Result := True;
+end;
+
+end.

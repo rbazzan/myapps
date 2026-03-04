@@ -1,0 +1,21 @@
+object Modelo: TModelo
+  OldCreateOrder = False
+  Height = 312
+  Width = 478
+  object RESTClient: TRESTClient
+    Params = <>
+    Left = 40
+    Top = 16
+  end
+  object RESTRequest: TRESTRequest
+    Client = RESTClient
+    Params = <>
+    Response = RESTResponse
+    Left = 40
+    Top = 72
+  end
+  object RESTResponse: TRESTResponse
+    Left = 40
+    Top = 128
+  end
+end

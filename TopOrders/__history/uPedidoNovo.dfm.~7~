@@ -1,0 +1,286 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Pedido'
+  ClientHeight = 518
+  ClientWidth = 686
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object StatusBar1: TStatusBar
+    Left = 0
+    Top = 499
+    Width = 686
+    Height = 19
+    Panels = <>
+    ExplicitLeft = -8
+    ExplicitTop = 286
+    ExplicitWidth = 635
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 449
+    Width = 686
+    Height = 50
+    Align = alBottom
+    BevelOuter = bvNone
+    TabOrder = 1
+    ExplicitTop = 452
+    object Button2: TButton
+      AlignWithMargins = True
+      Left = 598
+      Top = 1
+      Width = 85
+      Height = 47
+      Margins.Left = 1
+      Margins.Top = 1
+      Margins.Bottom = 2
+      Align = alRight
+      Caption = 'Fechar'
+      TabOrder = 0
+      ExplicitLeft = 290
+    end
+    object Button10: TButton
+      AlignWithMargins = True
+      Left = 511
+      Top = 1
+      Width = 85
+      Height = 47
+      Margins.Left = 1
+      Margins.Top = 1
+      Margins.Right = 1
+      Margins.Bottom = 2
+      Align = alRight
+      Caption = 'Gravar'
+      TabOrder = 1
+      ExplicitLeft = 203
+    end
+    object Button4: TButton
+      AlignWithMargins = True
+      Left = 197
+      Top = 1
+      Width = 96
+      Height = 47
+      Margins.Left = 1
+      Margins.Top = 1
+      Margins.Right = 1
+      Margins.Bottom = 2
+      Align = alLeft
+      Caption = 'Excluir'
+      TabOrder = 2
+      ExplicitLeft = 1
+    end
+    object Button1: TButton
+      AlignWithMargins = True
+      Left = 99
+      Top = 1
+      Width = 96
+      Height = 47
+      Margins.Left = 1
+      Margins.Top = 1
+      Margins.Right = 1
+      Margins.Bottom = 2
+      Align = alLeft
+      Caption = 'Editar'
+      TabOrder = 3
+      ExplicitLeft = 9
+      ExplicitTop = 3
+    end
+    object Button3: TButton
+      AlignWithMargins = True
+      Left = 1
+      Top = 1
+      Width = 96
+      Height = 47
+      Margins.Left = 1
+      Margins.Top = 1
+      Margins.Right = 1
+      Margins.Bottom = 2
+      Align = alLeft
+      Caption = 'Adicionar'
+      TabOrder = 4
+      OnClick = Button3Click
+      ExplicitLeft = 9
+      ExplicitTop = 3
+    end
+  end
+  object Panel3: TPanel
+    Left = 0
+    Top = 0
+    Width = 686
+    Height = 61
+    Align = alTop
+    TabOrder = 2
+    ExplicitWidth = 635
+    object Panel4: TPanel
+      Left = 1
+      Top = 1
+      Width = 77
+      Height = 59
+      Align = alLeft
+      BevelOuter = bvNone
+      TabOrder = 0
+      ExplicitLeft = 4
+      ExplicitTop = 4
+      ExplicitHeight = 53
+      object Label2: TLabel
+        AlignWithMargins = True
+        Left = 10
+        Top = 10
+        Width = 64
+        Height = 13
+        Margins.Left = 10
+        Margins.Top = 10
+        Margins.Bottom = 0
+        Align = alTop
+        Caption = 'ID:'
+        ExplicitWidth = 15
+      end
+      object edIDPEdido: TEdit
+        AlignWithMargins = True
+        Left = 10
+        Top = 26
+        Width = 64
+        Height = 21
+        Margins.Left = 10
+        Align = alTop
+        Color = 15987699
+        Enabled = False
+        TabOrder = 0
+      end
+    end
+    object Panel5: TPanel
+      Left = 78
+      Top = 1
+      Width = 122
+      Height = 59
+      Align = alLeft
+      BevelOuter = bvNone
+      TabOrder = 1
+      ExplicitLeft = 87
+      ExplicitTop = 4
+      ExplicitHeight = 53
+      object Label5: TLabel
+        AlignWithMargins = True
+        Left = 10
+        Top = 10
+        Width = 109
+        Height = 13
+        Margins.Left = 10
+        Margins.Top = 10
+        Margins.Bottom = 0
+        Align = alTop
+        Caption = 'Data:'
+        ExplicitWidth = 27
+      end
+      object dtpDataPedido: TDateTimePicker
+        AlignWithMargins = True
+        Left = 10
+        Top = 26
+        Width = 109
+        Height = 21
+        Margins.Left = 10
+        Align = alTop
+        Date = 46085.000000000000000000
+        Time = 0.329852870367176400
+        TabOrder = 0
+      end
+    end
+    object Panel6: TPanel
+      Left = 200
+      Top = 1
+      Width = 485
+      Height = 59
+      Align = alClient
+      BevelOuter = bvNone
+      TabOrder = 2
+      ExplicitLeft = 3
+      ExplicitTop = 113
+      ExplicitWidth = 629
+      ExplicitHeight = 56
+      object Label6: TLabel
+        AlignWithMargins = True
+        Left = 10
+        Top = 10
+        Width = 472
+        Height = 13
+        Margins.Left = 10
+        Margins.Top = 10
+        Margins.Bottom = 0
+        Align = alTop
+        Caption = 'Cliente:'
+        ExplicitWidth = 37
+      end
+      object dblClientes: TDBLookupComboBox
+        Left = 6
+        Top = 26
+        Width = 467
+        Height = 21
+        TabOrder = 0
+      end
+    end
+  end
+  object DBGrid: TDBGrid
+    AlignWithMargins = True
+    Left = 3
+    Top = 64
+    Width = 680
+    Height = 382
+    Align = alClient
+    TabOrder = 3
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'STATUSPRODUTO'
+        Title.Caption = ' '
+        Width = 20
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'CODIGOPRODUTO'
+        Title.Caption = 'C'#243'digo'
+        Width = 87
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'NOMECLIENTE'
+        Title.Caption = 'Produto'
+        Width = 318
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'QTDE'
+        Title.Alignment = taRightJustify
+        Title.Caption = 'Qtde'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'VALORPRODUTO'
+        Title.Alignment = taRightJustify
+        Title.Caption = 'Valor Unit.'
+        Width = 73
+        Visible = True
+      end
+      item
+        Expanded = False
+        Title.Alignment = taRightJustify
+        Title.Caption = 'Valor'
+        Visible = True
+      end>
+  end
+end

@@ -1,0 +1,68 @@
+unit uConfiguracoes;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
+
+type
+  TfrConfiguracoes = class(TForm)
+    Panel2: TPanel;
+    btFechar: TButton;
+    btGravar: TButton;
+    Edit4: TEdit;
+    Label4: TLabel;
+    procedure btGravarClick(Sender: TObject);
+    procedure btFecharClick(Sender: TObject);
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+  private
+    { Private declarations }
+    function Gravar(): Boolean;
+    function Validar(): Boolean;
+  public
+    { Public declarations }
+  end;
+
+var
+  frConfiguracoes: TfrConfiguracoes;
+
+implementation
+
+{$R *.dfm}
+
+uses uAppMessage;
+
+procedure TfrConfiguracoes.btFecharClick(Sender: TObject);
+begin
+   ModalResult := mrCancel;
+end;
+
+procedure TfrConfiguracoes.btGravarClick(Sender: TObject);
+begin
+   if Gravar() then begin
+      AppMsgOK('Configurações atualizadas com sucesso!');
+      ModalResult := mrOk;
+   end;
+end;
+
+procedure TfrConfiguracoes.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+   if Key = VK_ESCAPE then close;
+
+end;
+
+function TfrConfiguracoes.Gravar(): Boolean;
+begin
+   if Validar() then begin
+      Result := True;
+   end;
+end;
+
+function TfrConfiguracoes.Validar(): Boolean;
+begin
+   Result := True;
+end;
+
+end.

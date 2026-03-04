@@ -1,0 +1,361 @@
+object frPedidos: TfrPedidos
+  Left = 0
+  Top = 0
+  BorderStyle = bsDialog
+  Caption = 'Pedidos'
+  ClientHeight = 418
+  ClientWidth = 797
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  KeyPreview = True
+  OldCreateOrder = False
+  Position = poScreenCenter
+  OnKeyDown = FormKeyDown
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 797
+    Height = 36
+    Align = alTop
+    TabOrder = 0
+    ExplicitWidth = 919
+    object Label1: TLabel
+      AlignWithMargins = True
+      Left = 385
+      Top = 4
+      Width = 55
+      Height = 28
+      Align = alRight
+      Caption = 'Data inicial:'
+      Layout = tlCenter
+      ExplicitLeft = 339
+      ExplicitTop = 12
+      ExplicitHeight = 13
+    end
+    object Label2: TLabel
+      AlignWithMargins = True
+      Left = 549
+      Top = 4
+      Width = 50
+      Height = 28
+      Align = alRight
+      Caption = 'Data final:'
+      Layout = tlCenter
+      ExplicitLeft = 535
+      ExplicitTop = 6
+      ExplicitHeight = 13
+    end
+    object Label3: TLabel
+      AlignWithMargins = True
+      Left = 4
+      Top = 4
+      Width = 50
+      Height = 28
+      Align = alLeft
+      Caption = 'Pesquisar:'
+      Layout = tlCenter
+      ExplicitHeight = 13
+    end
+    object edPesquisa: TEdit
+      AlignWithMargins = True
+      Left = 60
+      Top = 7
+      Width = 319
+      Height = 22
+      Margins.Top = 6
+      Margins.Bottom = 6
+      Align = alClient
+      TabOrder = 0
+      TextHint = 'Digite o texto a pesquisar'
+      ExplicitLeft = 4
+      ExplicitTop = 4
+      ExplicitWidth = 437
+      ExplicitHeight = 33
+    end
+    object DateTimePicker1: TDateTimePicker
+      AlignWithMargins = True
+      Left = 446
+      Top = 7
+      Width = 97
+      Height = 22
+      Margins.Top = 6
+      Margins.Bottom = 6
+      Align = alRight
+      Date = 46084.000000000000000000
+      Time = 0.697978541669726800
+      TabOrder = 1
+      ExplicitLeft = 576
+      ExplicitHeight = 24
+    end
+    object DateTimePicker2: TDateTimePicker
+      AlignWithMargins = True
+      Left = 605
+      Top = 7
+      Width = 97
+      Height = 22
+      Margins.Top = 6
+      Margins.Bottom = 6
+      Align = alRight
+      Date = 46084.000000000000000000
+      Time = 0.697978541669726800
+      TabOrder = 2
+      ExplicitLeft = 736
+      ExplicitHeight = 24
+    end
+    object Button1: TButton
+      AlignWithMargins = True
+      Left = 708
+      Top = 4
+      Width = 85
+      Height = 28
+      Align = alRight
+      Caption = 'Carregar'
+      TabOrder = 3
+      ExplicitLeft = 840
+      ExplicitHeight = 30
+    end
+  end
+  object StatusBar1: TStatusBar
+    Left = 0
+    Top = 399
+    Width = 797
+    Height = 19
+    Panels = <>
+    ExplicitLeft = 464
+    ExplicitTop = 264
+    ExplicitWidth = 0
+  end
+  object DBGrid1: TDBGrid
+    AlignWithMargins = True
+    Left = 3
+    Top = 39
+    Width = 791
+    Height = 307
+    Align = alClient
+    TabOrder = 2
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'STATUSPEDIDO'
+        Title.Caption = ' '
+        Width = 20
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'DATAPEDIDO'
+        Title.Caption = 'Data'
+        Width = 76
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'CODIGOPEDIDO'
+        Title.Caption = 'C'#243'digo'
+        Width = 87
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'NOMECLIENTE'
+        Title.Caption = 'Cliente'
+        Width = 405
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'VALORPEDIDO'
+        Title.Caption = 'Valor'
+        Width = 73
+        Visible = True
+      end>
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 349
+    Width = 797
+    Height = 50
+    Align = alBottom
+    BevelOuter = bvNone
+    TabOrder = 3
+    ExplicitTop = 441
+    ExplicitWidth = 919
+    object btFechar: TButton
+      AlignWithMargins = True
+      Left = 709
+      Top = 1
+      Width = 85
+      Height = 47
+      Margins.Left = 1
+      Margins.Top = 1
+      Margins.Bottom = 2
+      Align = alRight
+      Caption = 'Fechar'
+      TabOrder = 0
+      OnClick = btFecharClick
+      ExplicitLeft = 831
+      ExplicitHeight = 27
+    end
+    object GroupBox1: TGroupBox
+      AlignWithMargins = True
+      Left = 3
+      Top = 3
+      Width = 217
+      Height = 42
+      Margins.Bottom = 5
+      Align = alLeft
+      Caption = ' [Status Pedido] '
+      TabOrder = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitHeight = 36
+      object Shape1: TShape
+        AlignWithMargins = True
+        Left = 140
+        Top = 18
+        Width = 15
+        Height = 19
+        Align = alLeft
+        Brush.Color = clSilver
+        Shape = stCircle
+        ExplicitLeft = 2
+        ExplicitTop = 15
+      end
+      object Label4: TLabel
+        AlignWithMargins = True
+        Left = 158
+        Top = 18
+        Width = 50
+        Height = 19
+        Margins.Left = 0
+        Align = alLeft
+        Caption = 'Cancelado'
+        ExplicitHeight = 13
+      end
+      object Shape2: TShape
+        AlignWithMargins = True
+        Left = 5
+        Top = 18
+        Width = 15
+        Height = 19
+        Align = alLeft
+        Brush.Color = clGreen
+        Shape = stCircle
+        ExplicitTop = 17
+        ExplicitHeight = 13
+      end
+      object Label5: TLabel
+        AlignWithMargins = True
+        Left = 23
+        Top = 18
+        Width = 41
+        Height = 19
+        Margins.Left = 0
+        Align = alLeft
+        Caption = 'Fechado'
+        ExplicitHeight = 13
+      end
+      object Label6: TLabel
+        AlignWithMargins = True
+        Left = 88
+        Top = 18
+        Width = 46
+        Height = 19
+        Margins.Left = 0
+        Align = alLeft
+        Caption = 'Pendente'
+        ExplicitLeft = 93
+        ExplicitHeight = 13
+      end
+      object Shape3: TShape
+        AlignWithMargins = True
+        Left = 70
+        Top = 18
+        Width = 15
+        Height = 19
+        Align = alLeft
+        Brush.Color = clYellow
+        Shape = stCircle
+        ExplicitLeft = 2
+        ExplicitTop = 15
+      end
+    end
+    object btImprimir: TButton
+      AlignWithMargins = True
+      Left = 535
+      Top = 1
+      Width = 85
+      Height = 47
+      Margins.Left = 1
+      Margins.Top = 1
+      Margins.Right = 1
+      Margins.Bottom = 2
+      Align = alRight
+      Caption = 'Imprimir'
+      TabOrder = 2
+      ExplicitLeft = 570
+      ExplicitHeight = 28
+    end
+    object btNovo: TButton
+      AlignWithMargins = True
+      Left = 361
+      Top = 1
+      Width = 85
+      Height = 47
+      Margins.Left = 1
+      Margins.Top = 1
+      Margins.Right = 1
+      Margins.Bottom = 2
+      Align = alRight
+      Caption = 'Novo'
+      TabOrder = 3
+      OnClick = btNovoClick
+      ExplicitLeft = 657
+      ExplicitHeight = 28
+    end
+    object btEditar: TButton
+      AlignWithMargins = True
+      Left = 448
+      Top = 1
+      Width = 85
+      Height = 47
+      Margins.Left = 1
+      Margins.Top = 1
+      Margins.Right = 1
+      Margins.Bottom = 2
+      Align = alRight
+      Caption = 'Editar'
+      TabOrder = 4
+      OnClick = btEditarClick
+      ExplicitLeft = 744
+      ExplicitHeight = 28
+    end
+    object btExcluir: TButton
+      AlignWithMargins = True
+      Left = 622
+      Top = 1
+      Width = 85
+      Height = 47
+      Margins.Left = 1
+      Margins.Top = 1
+      Margins.Right = 1
+      Margins.Bottom = 2
+      Align = alRight
+      Caption = 'Excluir'
+      TabOrder = 5
+      ExplicitLeft = 831
+      ExplicitHeight = 28
+    end
+  end
+end

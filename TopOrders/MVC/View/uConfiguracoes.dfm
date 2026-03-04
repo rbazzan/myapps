@@ -1,0 +1,81 @@
+object frConfiguracoes: TfrConfiguracoes
+  Left = 0
+  Top = 0
+  BorderStyle = bsDialog
+  Caption = 'Configura'#231#245'es'
+  ClientHeight = 120
+  ClientWidth = 645
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  KeyPreview = True
+  OldCreateOrder = False
+  Position = poScreenCenter
+  OnKeyDown = FormKeyDown
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label4: TLabel
+    AlignWithMargins = True
+    Left = 10
+    Top = 10
+    Width = 632
+    Height = 13
+    Margins.Left = 10
+    Margins.Top = 10
+    Margins.Bottom = 0
+    Align = alTop
+    Caption = 'EndPoint API Server'
+    ExplicitWidth = 97
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 70
+    Width = 645
+    Height = 50
+    Align = alBottom
+    BevelOuter = bvNone
+    TabOrder = 0
+    object btFechar: TButton
+      AlignWithMargins = True
+      Left = 557
+      Top = 1
+      Width = 85
+      Height = 47
+      Margins.Left = 1
+      Margins.Top = 1
+      Margins.Bottom = 2
+      Align = alRight
+      Caption = 'Fechar'
+      TabOrder = 0
+      OnClick = btFecharClick
+    end
+    object btGravar: TButton
+      AlignWithMargins = True
+      Left = 470
+      Top = 1
+      Width = 85
+      Height = 47
+      Margins.Left = 1
+      Margins.Top = 1
+      Margins.Right = 1
+      Margins.Bottom = 2
+      Align = alRight
+      Caption = 'Gravar'
+      TabOrder = 1
+      OnClick = btGravarClick
+    end
+  end
+  object Edit4: TEdit
+    AlignWithMargins = True
+    Left = 10
+    Top = 26
+    Width = 632
+    Height = 21
+    Margins.Left = 10
+    Align = alTop
+    TabOrder = 1
+  end
+end

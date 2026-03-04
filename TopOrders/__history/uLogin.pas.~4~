@@ -1,0 +1,40 @@
+unit uLogin;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls;
+
+type
+  TfrLogin = class(TForm)
+    Panel2: TPanel;
+    btFechar: TButton;
+    btEntrar: TButton;
+    Panel3: TPanel;
+    Panel1: TPanel;
+    Label2: TLabel;
+    Label4: TLabel;
+    edSenha: TEdit;
+    edUsuario: TEdit;
+    Image1: TImage;
+    procedure btFecharClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frLogin: TfrLogin;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrLogin.btFecharClick(Sender: TObject);
+begin
+  Application.Terminate;
+end;
+
+end.

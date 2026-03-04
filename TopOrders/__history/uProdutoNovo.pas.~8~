@@ -1,0 +1,67 @@
+unit uProdutoNovo;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Vcl.ComCtrls;
+
+type
+  TfrProdutoNovo = class(TForm)
+    StatusBar1: TStatusBar;
+    Panel2: TPanel;
+    btFechar: TButton;
+    btGravar: TButton;
+    Label1: TLabel;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Label2: TLabel;
+    Edit3: TEdit;
+    Label3: TLabel;
+    Edit4: TEdit;
+    Label4: TLabel;
+    procedure btFecharClick(Sender: TObject);
+    procedure btGravarClick(Sender: TObject);
+  private
+    { Private declarations }
+    function Gravar(): Boolean;
+    function Validar(): Boolean;
+  public
+    { Public declarations }
+  end;
+
+var
+  frProdutoNovo: TfrProdutoNovo;
+
+implementation
+
+{$R *.dfm}
+
+uses uAppMessage;
+
+procedure TfrProdutoNovo.btGravarClick(Sender: TObject);
+begin
+   if Gravar() then begin
+      AppMsgOK('Dados gravados com sucesso!');
+      ModalResult := mrOK;
+   end;
+end;
+
+procedure TfrProdutoNovo.btFecharClick(Sender: TObject);
+begin
+   Close;
+end;
+
+function TfrProdutoNovo.Gravar(): Boolean;
+begin
+   if Validar() then begin
+      Result := True;
+   end;
+end;
+
+function TfrProdutoNovo.Validar(): Boolean;
+begin
+   Result := True;
+end;
+
+end.

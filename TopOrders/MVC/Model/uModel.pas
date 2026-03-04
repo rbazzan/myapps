@@ -1,0 +1,36 @@
+unit uModel;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, REST.Types, REST.Client,
+   System.JSON, System.Variants,
+  Data.Bind.Components, Data.Bind.ObjectScope, Data.DB,
+  FireDAC.Comp.Client,
+
+  uConversor;
+
+type
+  TModelo = class(TDataModule)
+    RESTClient: TRESTClient;
+    RESTRequest: TRESTRequest;
+    RESTResponse: TRESTResponse;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+
+    //Chamadas para produto
+  end;
+
+var
+  Modelo: TModelo;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+
+end.

@@ -1,0 +1,22 @@
+unit uController;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
+
+  uModel;
+
+type
+  TController = class(TComponent)
+  private
+
+  public
+    constructor Create(AOwner: TComponent); virtual;
+    destructor Destroy; override;
+  end;
+
+implementation
+
+
+end.

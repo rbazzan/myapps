@@ -1,0 +1,21 @@
+unit uController;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
+
+  uModel;
+
+type
+   TController = class(TComponent)
+   private
+
+   public
+
+   end;
+
+implementation
+
+
+end.

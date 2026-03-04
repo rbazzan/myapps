@@ -1,0 +1,268 @@
+object frUsuarios: TfrUsuarios
+  Left = 0
+  Top = 0
+  BorderStyle = bsDialog
+  Caption = 'Listagem de Usu'#225'rios'
+  ClientHeight = 309
+  ClientWidth = 645
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  KeyPreview = True
+  OldCreateOrder = False
+  Position = poScreenCenter
+  OnKeyDown = FormKeyDown
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 645
+    Height = 36
+    Align = alTop
+    TabOrder = 0
+    ExplicitWidth = 919
+    object Label3: TLabel
+      AlignWithMargins = True
+      Left = 4
+      Top = 4
+      Width = 50
+      Height = 28
+      Align = alLeft
+      Caption = 'Pesquisar:'
+      Layout = tlCenter
+      ExplicitHeight = 13
+    end
+    object edPesquisa: TEdit
+      AlignWithMargins = True
+      Left = 60
+      Top = 7
+      Width = 490
+      Height = 22
+      Margins.Top = 6
+      Margins.Bottom = 6
+      Align = alClient
+      TabOrder = 0
+      TextHint = 'Digite o texto a pesquisar'
+      ExplicitWidth = 425
+      ExplicitHeight = 21
+    end
+    object btCarregar: TButton
+      AlignWithMargins = True
+      Left = 556
+      Top = 4
+      Width = 85
+      Height = 28
+      Align = alRight
+      Caption = 'Carregar'
+      TabOrder = 1
+      ExplicitLeft = 491
+    end
+  end
+  object StatusBar1: TStatusBar
+    Left = 0
+    Top = 240
+    Width = 645
+    Height = 19
+    Panels = <>
+    ExplicitTop = 280
+    ExplicitWidth = 580
+  end
+  object DBGrid1: TDBGrid
+    AlignWithMargins = True
+    Left = 3
+    Top = 39
+    Width = 639
+    Height = 198
+    Align = alClient
+    TabOrder = 2
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'STATUSUSUARIO'
+        Title.Caption = ' '
+        Width = 20
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'CODIGOUSUARIO'
+        Title.Caption = 'C'#243'digo'
+        Width = 87
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'NOMECLIENTE'
+        Title.Caption = 'Nome'
+        Width = 252
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'VALORPRODUTO'
+        Title.Caption = 'Login'
+        Width = 73
+        Visible = True
+      end
+      item
+        Expanded = False
+        Title.Caption = 'Senha'
+        Visible = True
+      end>
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 259
+    Width = 645
+    Height = 50
+    Align = alBottom
+    BevelOuter = bvNone
+    TabOrder = 3
+    ExplicitTop = 249
+    ExplicitWidth = 580
+    object btFechar: TButton
+      AlignWithMargins = True
+      Left = 557
+      Top = 1
+      Width = 85
+      Height = 47
+      Margins.Left = 1
+      Margins.Top = 1
+      Margins.Bottom = 2
+      Align = alRight
+      Caption = 'Fechar'
+      TabOrder = 0
+      OnClick = btFecharClick
+      ExplicitLeft = 492
+    end
+    object GroupBox1: TGroupBox
+      AlignWithMargins = True
+      Left = 3
+      Top = 3
+      Width = 126
+      Height = 42
+      Margins.Bottom = 5
+      Align = alLeft
+      Caption = ' [Status Usu'#225'rio] '
+      TabOrder = 1
+      object Shape1: TShape
+        AlignWithMargins = True
+        Left = 59
+        Top = 18
+        Width = 15
+        Height = 19
+        Align = alLeft
+        Brush.Color = clSilver
+        Shape = stCircle
+        ExplicitLeft = 2
+        ExplicitTop = 15
+      end
+      object Label4: TLabel
+        AlignWithMargins = True
+        Left = 77
+        Top = 18
+        Width = 39
+        Height = 19
+        Margins.Left = 0
+        Align = alLeft
+        Caption = 'Inativos'
+        ExplicitHeight = 13
+      end
+      object Shape2: TShape
+        AlignWithMargins = True
+        Left = 5
+        Top = 18
+        Width = 15
+        Height = 19
+        Align = alLeft
+        Brush.Color = clGreen
+        Shape = stCircle
+        ExplicitTop = 17
+        ExplicitHeight = 13
+      end
+      object Label5: TLabel
+        AlignWithMargins = True
+        Left = 23
+        Top = 18
+        Width = 30
+        Height = 19
+        Margins.Left = 0
+        Align = alLeft
+        Caption = 'Ativos'
+        ExplicitHeight = 13
+      end
+    end
+    object btImprimir: TButton
+      AlignWithMargins = True
+      Left = 383
+      Top = 1
+      Width = 85
+      Height = 47
+      Margins.Left = 1
+      Margins.Top = 1
+      Margins.Right = 1
+      Margins.Bottom = 2
+      Align = alRight
+      Caption = 'Imprimir'
+      TabOrder = 2
+      ExplicitLeft = 318
+    end
+    object btNovo: TButton
+      AlignWithMargins = True
+      Left = 209
+      Top = 1
+      Width = 85
+      Height = 47
+      Margins.Left = 1
+      Margins.Top = 1
+      Margins.Right = 1
+      Margins.Bottom = 2
+      Align = alRight
+      Caption = 'Novo'
+      TabOrder = 3
+      OnClick = btNovoClick
+      ExplicitLeft = 144
+    end
+    object btEditar: TButton
+      AlignWithMargins = True
+      Left = 296
+      Top = 1
+      Width = 85
+      Height = 47
+      Margins.Left = 1
+      Margins.Top = 1
+      Margins.Right = 1
+      Margins.Bottom = 2
+      Align = alRight
+      Caption = 'Editar'
+      TabOrder = 4
+      OnClick = btEditarClick
+      ExplicitLeft = 231
+    end
+    object btExcluir: TButton
+      AlignWithMargins = True
+      Left = 470
+      Top = 1
+      Width = 85
+      Height = 47
+      Margins.Left = 1
+      Margins.Top = 1
+      Margins.Right = 1
+      Margins.Bottom = 2
+      Align = alRight
+      Caption = 'Excluir'
+      TabOrder = 5
+      OnClick = btExcluirClick
+      ExplicitLeft = 405
+    end
+  end
+end

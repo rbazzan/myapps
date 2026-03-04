@@ -1,0 +1,81 @@
+unit uPedidosAddProduto;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.DBCtrls, Vcl.StdCtrls, Vcl.ExtCtrls,
+  Vcl.ComCtrls;
+
+type
+  TfrPedidosAddProduto = class(TForm)
+    StatusBar1: TStatusBar;
+    Panel2: TPanel;
+    Button2: TButton;
+    Button10: TButton;
+    Label1: TLabel;
+    edQtde: TEdit;
+    edID: TEdit;
+    Label3: TLabel;
+    Label4: TLabel;
+    dblProduto: TDBLookupComboBox;
+    procedure Button2Click(Sender: TObject);
+    procedure dblProdutoKeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
+    procedure Button10Click(Sender: TObject);
+  private
+    { Private declarations }
+    FCodigoProduto: Integer;
+    procedure SetCodigoProduto(const Value: Integer);
+
+    function Gravar(): Boolean;
+    function Validar(): Boolean;
+  public
+    { Public declarations }
+    property CodigoProduto: Integer read FCodigoProduto write SetCodigoProduto;
+  end;
+
+var
+  frPedidosAddProduto: TfrPedidosAddProduto;
+
+implementation
+
+{$R *.dfm}
+
+uses uAppMessage;
+
+procedure TfrPedidosAddProduto.Button10Click(Sender: TObject);
+begin
+   if Gravar() then begin
+      AppMsgOK('Dados gravados com sucesso!');
+      ModalResult := mrOK;
+   end;
+end;
+
+procedure TfrPedidosAddProduto.Button2Click(Sender: TObject);
+begin
+   Close;
+end;
+
+procedure TfrPedidosAddProduto.dblProdutoKeyDown(Sender: TObject;
+  var Key: Word; Shift: TShiftState);
+begin
+  if Key = VK_ESCAPE then close;
+end;
+
+function TfrPedidosAddProduto.Gravar: Boolean;
+begin
+
+end;
+
+procedure TfrPedidosAddProduto.SetCodigoProduto(const Value: Integer);
+begin
+  FCodigoProduto := Value;
+end;
+
+function TfrPedidosAddProduto.Validar: Boolean;
+begin
+
+end;
+
+end.

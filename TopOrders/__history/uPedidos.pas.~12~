@@ -1,0 +1,87 @@
+unit uPedidos;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.Grids, Vcl.DBGrids,
+  Vcl.ComCtrls, Vcl.ExtCtrls, Vcl.StdCtrls;
+
+type
+  TfrPedidos = class(TForm)
+    Panel1: TPanel;
+    StatusBar1: TStatusBar;
+    DBGrid1: TDBGrid;
+    edPesquisa: TEdit;
+    DateTimePicker1: TDateTimePicker;
+    Label1: TLabel;
+    Label2: TLabel;
+    DateTimePicker2: TDateTimePicker;
+    Button1: TButton;
+    Label3: TLabel;
+    Panel2: TPanel;
+    btFechar: TButton;
+    GroupBox1: TGroupBox;
+    Shape1: TShape;
+    Label4: TLabel;
+    Shape2: TShape;
+    Label5: TLabel;
+    Label6: TLabel;
+    Shape3: TShape;
+    btImprimir: TButton;
+    btNovo: TButton;
+    btEditar: TButton;
+    btExcluir: TButton;
+    procedure btFecharClick(Sender: TObject);
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure btNovoClick(Sender: TObject);
+    procedure btEditarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frPedidos: TfrPedidos;
+
+implementation
+
+{$R *.dfm}
+
+uses uPedidoNovo;
+
+procedure TfrPedidos.btFecharClick(Sender: TObject);
+begin
+   Close;
+end;
+
+procedure TfrPedidos.btNovoClick(Sender: TObject);
+begin
+   try
+      frPedidoNovo := TfrPedidoNovo.Create(Self);
+      frPedidoNovo.CodigoPedido := 0;
+      frPedidoNovo.ShowModal();
+   finally
+      FreeAndNil(frPedidoNovo);
+   end;
+end;
+
+procedure TfrPedidos.btEditarClick(Sender: TObject);
+begin
+   try
+      frPedidoNovo := TfrPedidoNovo.Create(Self);
+      frPedidoNovo.CodigoPedido := 0;
+      frPedidoNovo.ShowModal();
+   finally
+      FreeAndNil(frPedidoNovo);
+   end;
+end;
+
+procedure TfrPedidos.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+   if Key = VK_ESCAPE then close;
+end;
+
+end.

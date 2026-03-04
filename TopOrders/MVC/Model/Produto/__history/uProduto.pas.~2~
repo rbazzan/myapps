@@ -1,0 +1,35 @@
+unit uProduto;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
+
+  uModel;
+
+type
+  TProduto = class(TComponent)
+  private
+  public
+    constructor Create(AOwner: TComponent); override;
+    destructor Destroy; override;
+  end;
+
+implementation
+
+
+{ TController }
+
+constructor TProduto.Create(AOwner: TComponent);
+begin
+  inherited;
+
+end;
+
+destructor TProduto.Destroy;
+begin
+
+  inherited;
+end;
+
+end.

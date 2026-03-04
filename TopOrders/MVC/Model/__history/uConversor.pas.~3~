@@ -1,0 +1,121 @@
+unit uConversor;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, REST.Types, REST.Client,
+   System.JSON, System.Variants,
+  Data.Bind.Components, Data.Bind.ObjectScope, Data.DB,
+  FireDAC.Comp.Client;
+
+
+implementation
+
+procedure JsonArrayToFDMemTable(const AJson: string; AMT: TFDMemTable);
+(* [
+     {"id":1,"nome":"Ana","ativo":true},
+     {"id":2,"nome":"Beto","ativo":false}
+   ] *)
+var
+  Arr: TJSONArray;
+  Obj: TJSONObject;
+  Pair: TJSONPair;
+  i: Integer;
+
+  function GuessFieldType(V: TJSONValue): TFieldType;
+  var
+    s: string;
+  begin
+    if (V = nil) or (V is TJSONNull) then Exit(ftString);
+
+    if V is TJSONNumber then
+    begin
+      s := TJSONNumber(V).ToString;
+      if Pos('.', s) > 0 then Exit(ftFloat) else Exit(ftLargeint);
+    end;
+
+    if (V is TJSONTrue) or (V is TJSONFalse) then Exit(ftBoolean);
+
+    // data normalmente vem como string, então fica string mesmo (você converte depois)
+    Exit(ftString);
+  end;
+
+  function JsonValueToVariant(V: TJSONValue): Variant;
+  var
+    s: string;
+    i64: Int64;
+    d: Double;
+  begin
+    if (V = nil) or (V is TJSONNull) then Exit(Null);
+
+    if V is TJSONString then Exit(TJSONString(V).Value);
+
+    if V is TJSONNumber then
+    begin
+      s := TJSONNumber(V).ToString;
+      if TryStrToInt64(s, i64) then Exit(i64);
+
+      // decimal do JSON é "."
+      s := StringReplace(s, '.', FormatSettings.DecimalSeparator, []);
+      if TryStrToFloat(s, d) then Exit(d);
+
+      Exit(s);
+    end;
+
+    if V is TJSONTrue then Exit(True);
+    if V is TJSONFalse then Exit(False);
+
+    // objeto/array dentro -> salva como texto
+    Exit(V.ToJSON);
+  end;
+
+begin
+  Arr := TJSONObject.ParseJSONValue(AJson) as TJSONArray;
+  if Arr = nil then
+    raise Exception.Create('JSON inválido ou não é um array.');
+
+  try
+    AMT.DisableControls;
+    try
+      AMT.Close;
+      AMT.FieldDefs.Clear;
+
+      if Arr.Count = 0 then
+      begin
+        AMT.CreateDataSet;
+        Exit;
+      end;
+
+      Obj := Arr.Items[0] as TJSONObject;
+      if Obj = nil then
+        raise Exception.Create('Array não contém objetos.');
+
+      // cria campos baseado no 1º item
+      for Pair in Obj do
+        AMT.FieldDefs.Add(Pair.JsonString.Value, GuessFieldType(Pair.JsonValue), 0);
+
+      AMT.CreateDataSet;
+
+      // popula
+      for i := 0 to Arr.Count - 1 do
+      begin
+        Obj := Arr.Items[i] as TJSONObject;
+        if Obj = nil then Continue;
+
+        AMT.Append;
+        for Pair in Obj do
+          if AMT.FindField(Pair.JsonString.Value) <> nil then
+            AMT.FieldByName(Pair.JsonString.Value).Value := JsonValueToVariant(Pair.JsonValue);
+        AMT.Post;
+      end;
+
+    finally
+      AMT.EnableControls;
+    end;
+  finally
+    Arr.Free;
+  end;
+end;
+
+
+end.

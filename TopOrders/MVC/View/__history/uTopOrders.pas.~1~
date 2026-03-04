@@ -1,0 +1,107 @@
+unit uTopOrders;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.ExtCtrls,
+  Vcl.Imaging.pngimage;
+
+type
+  TfrTopOrders = class(TForm)
+    MainMenu: TMainMenu;
+    Arquivo1: TMenuItem;
+    subMenuPedidos: TMenuItem;
+    Configuraes1: TMenuItem;
+    Ajuda1: TMenuItem;
+    Sobre1: TMenuItem;
+    subMenuProdutos: TMenuItem;
+    subMenuSeguranca: TMenuItem;
+    subMenuConexoes: TMenuItem;
+    subMenuUsuarios: TMenuItem;
+    subMenuTrocarSenha: TMenuItem;
+    Image1: TImage;
+    procedure subMenuPedidosClick(Sender: TObject);
+    procedure subMenuProdutosClick(Sender: TObject);
+    procedure subMenuUsuariosClick(Sender: TObject);
+    procedure subMenuTrocarSenhaClick(Sender: TObject);
+    procedure subMenuConexoesClick(Sender: TObject);
+    procedure Sobre1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frTopOrders: TfrTopOrders;
+
+implementation
+
+{$R *.dfm}
+
+uses uPedidos, uProdutos, uUsuarios, uUsuariosTrocarSenha, uConfiguracoes,
+  uSobre;
+
+procedure TfrTopOrders.Sobre1Click(Sender: TObject);
+begin
+   try
+      frSobre := TfrSobre.Create(Self);
+      frSobre.ShowModal;
+   finally
+      FreeAndNil(frSobre);
+   end;
+end;
+
+procedure TfrTopOrders.subMenuConexoesClick(Sender: TObject);
+begin
+   try
+     frConfiguracoes := TfrConfiguracoes.Create(Self);
+     frConfiguracoes.ShowModal;
+   finally
+     FreeAndNil(frConfiguracoes);
+   end;
+end;
+
+procedure TfrTopOrders.subMenuPedidosClick(Sender: TObject);
+begin
+   try
+     frPedidos := TfrPedidos.Create(Self);
+     frPedidos.ShowModal;
+   finally
+      FreeAndNil(frPedidos)
+   end;
+end;
+
+procedure TfrTopOrders.subMenuProdutosClick(Sender: TObject);
+begin
+   try
+     frProdutos := TfrProdutos.Create(Self);
+     frProdutos.ShowModal;
+   finally
+      FreeAndNil(frProdutos)
+   end;
+end;
+
+procedure TfrTopOrders.subMenuTrocarSenhaClick(Sender: TObject);
+begin
+   try
+      frUsuariosTrocarSenha := TfrUsuariosTrocarSenha.Create(Self);
+      frUsuariosTrocarSenha.CodigoUsuario := 0;
+      frUsuariosTrocarSenha.ShowModal;
+   finally
+      FreeAndNil(frUsuariosTrocarSenha);
+   end;
+end;
+
+procedure TfrTopOrders.subMenuUsuariosClick(Sender: TObject);
+begin
+   try
+     frUsuarios := TfrUsuarios.Create(Self);
+     frUsuarios.ShowModal;
+   finally
+      FreeAndNil(frUsuarios)
+   end;
+end;
+
+end.
